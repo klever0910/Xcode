@@ -52,7 +52,7 @@ import UIKit
 //
 //print(howExpenciveIsIt(price: 42, isCar:false))
 
-//FUNC 3
+//FUNC 1
 
 func oddOrEvenNumber (number: Int) -> String {
     let oddOrEven = number % 2
@@ -65,7 +65,7 @@ func oddOrEvenNumber (number: Int) -> String {
 print (oddOrEvenNumber(number: 32))
 print(oddOrEvenNumber(number: 31))
 
-//FUNC 4
+//FUNC 2
 
 func oddOrEvenNumberZero (number: Int) -> (String) {
     let oddOrEven = number % 2
@@ -83,7 +83,7 @@ print(oddOrEvenNumberZero(number: 34))
 print(oddOrEvenNumberZero(number: 31))
 
 
-//FUNC 5
+//FUNC 3
 
 func howOldAreYou (name: String, age: Int) -> (String) {
     switch age {
