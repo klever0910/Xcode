@@ -115,7 +115,7 @@ func herHisNames(name: String, gender: Bool) {
 
 }
 
-print(herHisNames(name: diffNames, gender: true))
+//print(herHisNames(name: diffNames, gender: true)) <- ERROR
 
 //FUNC 3
 
@@ -143,4 +143,4 @@ func oddOrEvenNumber (number: Int) -> String {
     }
 }
 
-print(oddOrEvenNumber(number: diffNumbersOddEven))
+//print(oddOrEvenNumber(number: diffNumbersOddEven)) <- ERROR
