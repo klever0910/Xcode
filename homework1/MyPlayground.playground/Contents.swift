@@ -1,101 +1,109 @@
 import UIKit
-
-//FUNC 1
-
-//func name(name: String){
-//    if (name.count >= 1) && (name.count <= 2) {
-//        print("wow, such a short name")
-//    }
-//    else if (name.count > 9){
-//        print("wow, your name is so long")
-//    }
-//    else if (name.isEmpty){
-//        print("name with no latters!? NO WAY!")
-//    }
-//    else {
-//        print("Hi \(name)")
-//    }
-//}
-//name(name: "S")
-//name(name: "Quterbeyker")
-//name(name: "")
-//name(name: "Savelii")
-
-//FUNC 2
-
-
-//func howExpenciveIsIt (price: Int, isCar: Bool) -> String {
 //
-//        var bikeOrCar = String()
+//let constArray: Array<String> = ["a", "b", "c", "d"]
 //
-//        if isCar {
-//            bikeOrCar = "is bike"
-//        } else {
-//            bikeOrCar = "is car"
-//        }
-//    let whatIsThis = "The price of this \(bikeOrCar) - \(price)."
+//constArray.count
 //
-//    if price <= 99 {
-//        print("Error too much for anything!")
-//    } else if price <= 250 {
-//        print (whatIsThis)
-//    } else if price <= 499 {
-//        print("Its to much for a bike, but its so cheep for a car! ERORR!")
-//    } else if price <= 999 {
-//        print(whatIsThis)
-//    } else {
-//        print(whatIsThis,"ITS INCREDIBLE CAR!")
-//    }
+//var array = [String]()
 //
-//    return ""
+//if array.count == 0 {
+//    print("array is 123 empty")
 //}
 //
-//print(howExpenciveIsIt(price: 42, isCar:false))
+//array += constArray
+//
+//array += ["e"]
+//
+//array.append("f")
+//
+//var array2 = array
+//
+//array
+//array2
+//
+//array2 [0] = "1"
+//
+//array
+//array2
+//
+////array [1...5] = ["0"]
+//
+//array
+//
+//array.insert("-", at: 3)
+//
+//array.remove(at: 2)
+//
+//array
+//
+let money = [100, 1, 1, 20, 5, 5, 50, 20 ,100]
 
-//FUNC 1
+var sum = 0
 
-func oddOrEvenNumber (number: Int) -> String {
-    let oddOrEven = number % 2
-    if oddOrEven == 0 {
-        return("\(number) is an odd number")
-    } else {
-        return("\(number) is an even number")
+for (index, value) in money.enumerated() {
+    print ("index = \(index) value = \(value)")
+    sum += value
+}
+//sum = 0
+//var index = 0
+//
+//for value in money {
+//    print ("pindex = \(index) value = \(value)")
+//    sum += value
+//    index += 1
+//}
+//
+//sum
+
+var shoppingList = ["Milk", "Water", "Bread", "Eggs"]
+    shoppingList.append("Beer")
+    if shoppingList.isEmpty {
+        print("Shopping list is empty")
     }
-}
-print (oddOrEvenNumber(number: 32))
-print(oddOrEvenNumber(number: 31))
-
-//FUNC 2
-
-func oddOrEvenNumberZero (number: Int) -> (String) {
-    let oddOrEven = number % 2
-    if number == 0 {
-        return("im not sure about 0")
-    } else if oddOrEven == 0 {
-        return("\(number) is an odd number")
-    } else {
-        return("\(number) is an even number")
-    }
+    else {
+        print("Shopping list have \(shoppingList.count) elements")
 }
 
-print(oddOrEvenNumberZero(number: 0))
-print(oddOrEvenNumberZero(number: 34))
-print(oddOrEvenNumberZero(number: 31))
+shoppingList.append("Fish")
 
+print(shoppingList)
 
-//FUNC 3
+shoppingList.insert("Beef", at: 0)
 
-func howOldAreYou (name: String, age: Int) -> (String) {
-    switch age {
-    case 0:
-        return("\(name) is \(age) and \(name) not exist yet")
-    case 1...14:
-        return("\(name) is \(age) and \(name) is a child")
-    case 15...50:
-        return("\(name) is \(age) and \(name) is not a child anymore")
-    default:
-        return("\(name) very old")
-        }
+print(shoppingList)
+
+let removeLast = shoppingList.removeFirst()
+
+print(shoppingList)
+
+for products in shoppingList {
+    print(products)
 }
 
-print(howOldAreYou(name: "Savelii", age: 0))
+for (index, value) in shoppingList.enumerated() {
+    print ("Element \(index + 1) - \(value)")
+}
+
+//MNOZHINI
+
+let letters = Set<Character> ()
+    print("letters have type Set<Character> and mistit' \(letters.count) elements")
+
+let oddDigits: Set = [1, 3, 5, 7, 9]
+let evenDigits: Set = [0, 2, 4, 6, 8]
+let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
+
+oddDigits.union(evenDigits).sorted()
+// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+oddDigits.intersection(singleDigitPrimeNumbers).sorted()
+
+let houseAnimals: Set = ["🐶", "🐱"]
+let farmAnimals: Set = ["🐮", "🐔", "🐑", "🐶", "🐱"]
+let cityAnimals: Set = ["🐦", "🐭"]
+
+houseAnimals.isSubset(of: farmAnimals)
+// true
+farmAnimals.isSuperset(of: houseAnimals)
+// true
+farmAnimals.isDisjoint(with: cityAnimals)
+// true
