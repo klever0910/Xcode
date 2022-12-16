@@ -89,48 +89,143 @@ import UIKit
 
 // FUNC 1
 
-func plusOne (num: Int) -> Int{
-    for index in 0..<num {
-    print(index)
-    }
-    return num
-}
-print(plusOne(num: 9))
+//func plusOne (num: Int) -> Int{
+//    for index in 0..<num {
+//    print(index)
+//    }
+//    return num
+//}
+//print(plusOne(num: 9))
 
 // FUNC 2
 
-let diffNames = ["Savelii", "Anastacia", "Victoria", "Pavlo", "Alina", "Volodimir"]
+//let diffNames = ["Savelii", "Anastacia", "Victoria", "Pavlo", "Alina", "Volodimir"]
+//
+//func herHisNames(name: String, gender: Bool) {
+//
+//    let herHis: String
+//
+//    if gender {
+//        herHis = "His"
+//    } else {
+//        herHis = "Her"
+//    }
+//
+//    print("\(herHis) name is \(name)")
 
-func herHisNames(name: String, gender: Bool) {
-
-    let herHis: String
-
-    if gender {
-        herHis = "His"
-    } else {
-        herHis = "Her"
-    }
-
-    print("\(herHis) name is \(name)")
-
-}
+//}
 
 //print(herHisNames(name: diffNames, gender: true)) <- ERROR
 
 //FUNC 3
 
-var diffNumbers = [4123, 1234, 43, 6542, 67652, 2, 768]
+//var diffNumbers = [4123, 1234, 43, 6542, 67652, 2, 768]
+//
+//func numbersPosition() {
+//
+//    for (index, value) in diffNumbers.enumerated() {
+//        print ("Is it number \(value) and it is on index \(index) in array")
+//    }
+//}
+//
+//print(numbersPosition())
 
-func numbersPosition() {
 
-    for (index, value) in diffNumbers.enumerated() {
-        print ("Is it number \(value) and it is on index \(index) in array")
+
+func growthOfPeople(sm: [Int]) {
+    for (index, value) in sm.enumerated() {
+                print ("Person on place \(index) is \(value) sm tall")
     }
 }
 
-print(numbersPosition())
+growthOfPeople(sm: [167, 180, 150, 200])
+
+let diffNames = ["Savelii", "Anastacia", "Victoria", "Pavlo", "Alina", "Volodimir"]
+
+diffNames.forEach { (name) in
+    print("\(name) is name")
+}
+
+
+// FUNC 0
+
+
+func peopleTemp (people: [(String, Double)]) {
+    people.forEach { (name, temp) in
+        if temp <= 36.5 {
+            print ("\(name) have \(temp) temp, has a cold")
+        }; if temp == 36.6 {
+            print ("\(name) have \(temp) temp, has a good")
+        } else { temp >= 36.7
+            print ("\(name) have \(temp) temp, has a fever")
+        }
+    }
+}
+
+let array = [("bob", 36.0), ("sam", 37.2), ("nick", 36.6), ("savelii", 36.4)]
+
+peopleTemp(people: array)
+
+let diffNumbers = [123, 34, 65, 654, 23, 523451, 435234, 4352345,]
+
+
+// FUNC1
+
+
+func sumNumbersArray (numbers: [Int]) -> String {
+    var summary = 0
+    for numbers in diffNumbers {
+        summary += numbers
+    }
+    return ("sum = \(summary)")
+}
+
+sumNumbersArray(numbers: diffNumbers)
+
+let randomArray = [10, -10, -5, 5]
+
+let sorry = ("sorry, its not working")
+
+
+
+// FUNC 2
+
+
+func positiveInteger (positive: [Int]) {
+    for positive in randomArray {
+        var summary = 0
+        if positive >= 0 {
+            for positive in randomArray {
+                summary += positive
+            print("sum = \(summary)")
+
+            }
+        } else {
+            print(sorry)
+        }
+    }
+}
+
+positiveInteger(positive: randomArray)
+
+
+// FUNC 3
+
+
+func someoneInArray (name: [String]) -> [String] {
+ 
+    name.forEach { (names) in
+        print("there is \(names) in array")
+    }
+    return [("there is \(name) in array")]
+}
+
+
+someoneInArray(name: diffNames)
+
 
 //FUNC 4
+
 
 var diffNumbersOddEven = [4123, 1234, 43, 6542, 67652, 2, 768]
 
@@ -143,4 +238,16 @@ func oddOrEvenNumber (number: Int) -> String {
     }
 }
 
-//print(oddOrEvenNumber(number: diffNumbersOddEven)) <- ERROR
+func intToStringOddEvenNumber (numbers: [Int]) -> [String] {
+    var arrayToString: [String] = []
+ 
+    numbers.forEach {
+        let str = oddOrEvenNumber(number: $0)
+        arrayToString.append(str)
+    }
+    print(arrayToString)
+    return arrayToString
+}
+
+intToStringOddEvenNumber(numbers: diffNumbersOddEven)
+
