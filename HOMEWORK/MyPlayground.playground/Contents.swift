@@ -149,22 +149,37 @@ diffNames.forEach { (name) in
 
 // FUNC 0
 
-
-func peopleTemp (people: [(String, Double)]) {
-    people.forEach { (name, temp) in
-        if temp <= 36.5 {
-            print ("\(name) have \(temp) temp, has a cold")
-        }; if temp == 36.6 {
-            print ("\(name) have \(temp) temp, has a good")
-        } else { temp >= 36.7
-            print ("\(name) have \(temp) temp, has a fever")
-        }
-    }
+struct People{
+    var name: String
+    var tempreture: Double
 }
 
-let array = [("bob", 36.0), ("sam", 37.2), ("nick", 36.6), ("savelii", 36.4)]
+let man1 = People(name: "Sava", tempreture: 34.6)
+let man2 = People(name: "Vova", tempreture: 36.6)
+let man3 = People(name: "Alina", tempreture: 100000.6)
+let man4 = People(name: "Ramir", tempreture: 44.0)
 
-peopleTemp(people: array)
+let arrayOfMan = [man1, man2, man3, man4]
+
+//arrayOfMan.forEach { (people:People) in
+//    if people.tempreture <= 36.5 {
+//        print ("\(people.name) have \(people.tempreture) temp, has a cold")
+//    } else if people.tempreture == 36.6 {
+//        print ("\(people.name) have \(people.tempreture) temp, has a good")
+//    } else if people.tempreture >= 36.7 {
+//        print ("\(people.name) have \(people.tempreture) temp, has a fever")
+//    }
+//}
+
+for people in arrayOfMan{
+    if people.tempreture <= 36.5 {
+        print ("\(people.name) have \(people.tempreture) temp, has a cold")
+    } else if people.tempreture == 36.6 {
+        print ("\(people.name) have \(people.tempreture) temp, has a good")
+    } else if people.tempreture >= 36.7 {
+        print ("\(people.name) have \(people.tempreture) temp, has a fever")
+    }
+}
 
 let diffNumbers = [123, 34, 65, 654, 23, 523451, 435234, 4352345,]
 
@@ -251,3 +266,7 @@ func intToStringOddEvenNumber (numbers: [Int]) -> [String] {
 
 intToStringOddEvenNumber(numbers: diffNumbersOddEven)
 
+func test(){
+    let tupl = [("Test1", 100)]
+    print(tupl[0].1)
+}
