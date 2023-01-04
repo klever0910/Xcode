@@ -156,10 +156,12 @@ struct People{
 
 let man1 = People(name: "Sava", tempreture: 34.6)
 let man2 = People(name: "Vova", tempreture: 36.6)
-let man3 = People(name: "Alina", tempreture: 100000.6)
+let man3 = People(name: "Alina", tempreture: 37.9)
 let man4 = People(name: "Ramir", tempreture: 44.0)
+let man5 = People(name: "Anastasia", tempreture: 35.5)
+let man6 = People(name: "Victoria", tempreture: 36.6)
 
-let arrayOfMan = [man1, man2, man3, man4]
+let arrayOfMan = [man1, man2, man3, man4, man5, man6]
 
 //arrayOfMan.forEach { (people:People) in
 //    if people.tempreture <= 36.5 {

@@ -11,15 +11,13 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let fireParticles = SKEmitterNode(fileNamed: "superFire")!
+    let player = SKSpriteNode (imageNamed: "player")
     
     override func didMove(to view: SKView) {
+        
+        backgroundColor = SKColor .white
+        player.position = CGPoint (x: size.width * 0.1, y: size.height * 0.5)
+        addChild(player)
        
-        addChild(fireParticles)
-        fireParticles.targetNode = self
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        fireParticles.position = touches.first?.location(in: self) ?? .init()
     }
 }
