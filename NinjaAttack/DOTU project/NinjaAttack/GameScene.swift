@@ -47,7 +47,7 @@ class GameScene: SKScene {
   
   override func didMove(to view: SKView) {
     
-    backgroundColor = SKColor .white
+    backgroundColor = SKColor .green
     
     player.position = CGPoint (x: size.width * 0.1 , y: size.height * 0.5)
     
@@ -63,9 +63,7 @@ class GameScene: SKScene {
         ])
     ))
     
-    let backgroundMusic = SKAudioNode(fileNamed: "ukraineHymn.mp3")
-    backgroundMusic.autoplayLooped = true
-    addChild(backgroundMusic)
+    
     
   }
   
