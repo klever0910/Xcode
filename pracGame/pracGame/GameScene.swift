@@ -19,15 +19,14 @@ class GameScene: SKScene {
     
     let cam = SKCameraNode()
     
-//    let bgContainer = SKNode()
-//    let bgSize = SKSpriteNode(imageNamed: "bg").frame.size
+    let bgContainer = SKNode()
+    //    let bgSize = SKSpriteNode(imageNamed: "bg").frame.size
+    
+    
     
     override func didMove(to view: SKView) {
         
         self.anchorPoint = .init(x: 0.5, y: 0.5)
-        let bg = SKSpriteNode(imageNamed: "bg")
-        bg.zPosition = -100
-        self.addChild(bg)
         self.camera = cam
         self.addChild(cam)
         cam.setScale(3.5)
@@ -66,17 +65,18 @@ class GameScene: SKScene {
             })
         cam.run(.sequence(actions))
         
-//        func setBg() {
-//
-//            for i in -2...2 {
-//                let bg = SKSpriteNode(imageNamed: "bg")
-//                bgContainer.addChild(bg)
-//                bg.zPosition = -100
-//                bg.position.y -= bg.frame.height * CGFloat(i)
-//            }
-//        }
-//        self.addChild(bgContainer)
-
+        setBg()
+    }
+    
+    func setBg() {
+        
+        for i in -5...5 {
+            let bg = SKSpriteNode(imageNamed: "bg")
+            bgContainer.addChild(bg)
+            bg.zPosition = -100
+            bg.position.y -= bg.frame.height * CGFloat(i)
+        }
+        self.addChild(bgContainer)
     }
     
     @objc func swiped(_ sender: UISwipeGestureRecognizer) {

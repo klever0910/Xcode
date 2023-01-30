@@ -43,7 +43,7 @@ class Knight: SKSpriteNode {
         let texture = SKTexture(imageNamed: "down1")
         super.init(texture: texture, color: .clear, size: texture.size())
         
-        self.physicsBody = .init(circleOfRadius: self.size.width / 3)
+        self.physicsBody = .init(circleOfRadius: self.size.width / 2)
         self.physicsBody?.mass = 1
         
         self.stay()
